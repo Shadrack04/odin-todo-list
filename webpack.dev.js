@@ -1,10 +1,10 @@
-const common = require("./common.config");
 const {merge} = require("webpack-merge");
+const common = require("./webpack.config");
 
-module,exports = merge(common, {
+module.exports = merge(common, {
   mode: "development",
-  devtools: "eval-source-map",
-  filename: {
+  devtool: "eval-source-map",
+  devServer: {
     watchFiles: ["./src/template.html"],
-  }
+  },
 })

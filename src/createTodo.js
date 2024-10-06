@@ -1,5 +1,5 @@
 
-export class createTodo {
+export class CreateTodo {
   constructor(title, description, dueDate, priority) {
     this.title = title,
     this.description = description,

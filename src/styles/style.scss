@@ -3,4 +3,93 @@
   margin: 0;
   box-sizing: border-box;
 }
+$primary-color: #3b82f6;
+$secondary-color: #172554;
 
+@mixin flex-center($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+header {
+  @include flex-center(space-between);
+  height: 60px;
+  width: 100%;
+  padding: 20px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  .create-btn {
+    all: unset;
+    font-size: 2rem;
+    font-weight: bolder;
+    background-color: $primary-color;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+}
+
+main {
+  display: flex;
+  width: 100%;
+  
+}
+
+aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 60px);
+  background-color: #eff6ff;
+  padding: 20px 0;
+  color: rgba(0, 0, 0, 0.797);
+  ul {
+    list-style: none;
+    margin-top: 30px;
+    li {
+      font-size: 1.5rem;
+      margin: 5px;
+      cursor: pointer;
+      &:hover {
+        color: black;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+#todo-section {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  .todo-container {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    input {
+      all: unset;
+      display: inline-block;
+      width: 60%;
+      padding: 10px;
+      border: 1px solid blue;
+      border-radius: 5px;
+    }
+    button {
+      all: unset;
+      padding: 10px 15px;
+      background-color: blue;
+      color: white;
+      border-radius: 5px;
+    }
+    ul {
+      margin-top: 30px;
+      width: 60%;
+    }
+  }
+}

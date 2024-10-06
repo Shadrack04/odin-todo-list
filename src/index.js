@@ -1,7 +1,5 @@
 import "./styles/style.css";
-import { createTodo } from "./createTodo";
+import { CreateTodo } from "./createTodo";
 
 
-const test = new createTodo('h', 're', 'rf', 'rw');
-console.log(test);
 

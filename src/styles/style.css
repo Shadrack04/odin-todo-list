@@ -85,4 +85,88 @@ aside ul li:hover {
 #todo-section .todo-container ul {
   margin-top: 30px;
   width: 60%;
+}
+
+.modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 85%;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 2px, 3px #3b82f6;
+  display: grid;
+  grid-template-rows: 10% 90%;
+}
+.modal-container .modal-header {
+  background-color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 20px;
+}
+.modal-container .modal-header h2 {
+  font-size: 2rem;
+}
+.modal-container .modal-header .close-btn {
+  all: unset;
+  font-size: 1.6rem;
+}
+.modal-container .modal-main {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.modal-container .modal-main .modal-aside {
+  background-color: #eff6ff;
+  text-align: center;
+  padding-top: 30px;
+}
+.modal-container .modal-main .modal-aside button {
+  all: unset;
+  display: block;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.797);
+  margin: 15px 30px;
+  cursor: pointer;
+}
+.modal-container .modal-main .modal-aside button:hover {
+  color: black;
+  -webkit-text-decoration: underline #3b82f6 4px;
+          text-decoration: underline #3b82f6 4px;
+  text-underline-offset: 8px;
+}
+.modal-container .modal-main .modal-content {
+  background-color: white;
+  padding: 20px;
+}
+.modal-container .modal-main .modal-content input {
+  all: unset;
+  display: inline-block;
+  width: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+.modal-container .modal-main .modal-content button {
+  all: unset;
+  padding: 10px 15px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.484);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  z-index: 50;
 }/*# sourceMappingURL=style.css.map */

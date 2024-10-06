@@ -1,9 +1,6 @@
-
 export class CreateTodo {
-  constructor(title, description, dueDate, priority) {
-    this.title = title,
-    this.description = description,
-    this.dueDate = dueDate,
-    this.priority = priority
+  constructor(title, description) {
+    this.title = title, 
+    this.description = description;
   }
 }

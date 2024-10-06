@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odin Todo List</title>
-</head>
-<body>
-  <header>
-    <div class="logo">
-      <h1>TODO-LIST</h1>
-    </div>
-    <div class="create-btn-container">
-      <button class="create-btn">+</button>
-    </div>
-  </header>
-  <main>
-    <aside>
-      <div class="project-title">
-        <h2>List of project</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin Todo List</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>TODO-LIST</h1>
       </div>
-      <ul>
-        <li>House Chores</li>
-        <li>Gym</li>
-        <li>Learning</li>
-        <li>Shopping list</li>
-      </ul>
-    </aside>
-    <section id="todo-section">
-      <div class="main-title">
-        <h2>Create Todos</h2>
+      <div class="create-btn-container">
+        <button class="create-btn">+</button>
       </div>
-      <div class="todo-container">
-        <div class="todo-input-container">
-          <input type="text" id="todo-input">
+    </header>
+    <main>
+      <aside>
+        <div class="project-title">
+          <h2>List of project</h2>
+        </div>
+        <ul>
+          <li>House Chores</li>
+          <li>Gym</li>
+          <li>Learning</li>
+          <li>Shopping list</li>
+        </ul>
+      </aside>
+      <section id="todo-section">
+        <div class="main-title">
+          <h2>Create Todos</h2>
+        </div>
+        <div class="todo-container">
+          <div class="todo-input-container">
+            <input type="text" id="todo-input" />
+            <button class="add-todo-btn">Add Todo</button>
+          </div>
+          <div class="todo-list-container">
+            <ul class="todos">
+              <li class="todo-item">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus,
+                ad beatae repudiandae aliquid eos facilis consequuntur tempore
+                blanditiis eveniet eaque.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title">
+          <h2>Create a new??</h2>
+        </div>
+        <div class="create-btn-container">
+          <button class="close-btn">x</button>
+        </div>
+      </div>
+      <div class="modal-main">
+        <div class="modal-aside">
+          <button class="create-todo-btn">To Do</button>
+          <button class="create-project-btn">Project</button>
+          <button class="create-note-btn">Note</button>
+        </div>
+        <div class="modal-content">
+          <div class="todo-input-container">
+            <input type="text" id="todo-title" placeholder="Todo Title" />
+            <input type="text" id="todo-details" placeholder="Todo Details" />
+          </div>
           <button class="add-todo-btn">Add Todo</button>
         </div>
-        <div class="todo-list-container">
-          <ul class="todos">
-            <li class="todo-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, ad beatae repudiandae aliquid eos facilis consequuntur tempore blanditiis eveniet eaque.</li>
-          </ul>
-        </div>
       </div>
-    </section>
-  </main>
-  
-</body>
+    </div>
+    <div class="overlay"></div>
+  </body>
 </html>

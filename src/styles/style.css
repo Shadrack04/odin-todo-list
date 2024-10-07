@@ -62,29 +62,34 @@ aside ul li:hover {
 }
 #todo-section .todo-container {
   width: 80%;
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: 10px auto;
 }
-#todo-section .todo-container input {
-  all: unset;
-  display: inline-block;
-  width: 60%;
+#todo-section .todo-container .todos {
+  padding: 20px;
+}
+#todo-section .todo-container .todos .todo-item {
+  background-color: #eff6ff;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
   padding: 10px;
-  border: 1px solid blue;
-  border-radius: 5px;
+}
+#todo-section .todo-container .todos .todo-item:hover {
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.123);
+}
+#todo-section .todo-container .todos .todo-item p {
+  width: 70%;
+}
+#todo-section .todo-container .todos .todo-item .todo-utils {
+  display: flex;
 }
 #todo-section .todo-container button {
   all: unset;
   padding: 10px 15px;
+  margin: 0 5px;
   background-color: blue;
   color: white;
   border-radius: 5px;
-}
-#todo-section .todo-container ul {
-  margin-top: 30px;
-  width: 60%;
 }
 
 .modal-container {
@@ -99,6 +104,7 @@ aside ul li:hover {
   box-shadow: 2px, 3px #3b82f6;
   display: grid;
   grid-template-rows: 10% 90%;
+  display: none;
 }
 .modal-container .modal-header {
   background-color: #3b82f6;
@@ -169,4 +175,5 @@ aside ul li:hover {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   z-index: 50;
+  display: none;
 }/*# sourceMappingURL=style.css.map */

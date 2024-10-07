@@ -1,15 +1,5 @@
-
-export class todos {
+export class Todos {
   constructor(title, description) {
-    this.title = title,
-    this.description = description
+    (this.title = title), (this.description = description);
   }
-
-  addTodo(todoArray) {
-    todoArray.push({
-      title: this.title,
-      description: this.description
-    })
-  }
-
 }

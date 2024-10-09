@@ -1,5 +1,15 @@
-export class Todos {
-  constructor(title, description) {
-    (this.title = title), (this.description = description);
+
+export let todoArray = [
+  {
+    title: 'title',
+    description: 'description'
+  },
+  {
+    title: 'title 2',
+    description: 'description 2'
+  },
+  {
+    title: 'title 3',
+    description: 'description 3'
   }
-}
+];

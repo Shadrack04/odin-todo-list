@@ -1,9 +1,14 @@
+import { todoArray } from "./Todos";
+
+
 export class Ui {
-  static updateUi(element, todoArray) {
-    todoArray.forEach((item) => {
+  static updateUi(todoArray) {
+    const todoList = document.querySelector('.todos');
+    todoList.innerText = '';
+    todoArray.forEach((item, index) => {
       const div = document.createElement('div');
       div.innerHTML = `
-        <div class="todo-item">
+        <div class="todo-item" data-index="${index}">
           <p class="todo-title">
             ${item.title}
           </p>
@@ -13,7 +18,13 @@ export class Ui {
           </div>
         </div>
       `;
-      element.appendChild(div);
+      todoList.appendChild(div);
     });
+  }
+
+  static deleteTodo(indexToRemove, todoArray) {
+    todoArray.splice(indexToRemove, 1);
+    console.log(todoArray);
+    Ui.updateUi(todoArray);
   }
 }

@@ -20,6 +20,7 @@
           <h2>List of project</h2>
         </div>
         <ul>
+          <li>Home</li>
           <li>House Chores</li>
           <li>Gym</li>
           <li>Learning</li>
@@ -59,7 +60,7 @@
       </section>
     </main>
 
-    <div class="modal-container">
+    <div class="modal-container hidden">
       <div class="modal-header">
         <div class="modal-title">
           <h2>Create a new??</h2>
@@ -77,12 +78,22 @@
         <div class="modal-content">
           <div class="todo-input-container">
             <input type="text" id="todo-title" placeholder="Todo Title" />
-            <input type="text" id="todo-details" placeholder="Todo Details" />
+            <input type="text" id="todo-description" placeholder="Todo Description" /><br>
+            <label for="date">Due Date:</label><br>
+            <input type="date" name="date" id="date">
+          </div>
+          <div class="select-container">
+            <label for="priority-level">Priority Level:</label>
+            <select name="priority" id="priority-level">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
           </div>
           <button class="add-todo-btn">Add Todo</button>
         </div>
       </div>
     </div>
-    <div class="overlay"></div>
+    <div class="overlay hidden"></div>
   </body>
 </html>

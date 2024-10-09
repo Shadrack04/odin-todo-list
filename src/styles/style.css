@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 header {
@@ -22,6 +23,7 @@ header .create-btn {
   color: white;
   padding: 5px 10px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 main {
@@ -45,12 +47,14 @@ aside ul {
 }
 aside ul li {
   font-size: 1.5rem;
-  margin: 5px;
+  margin: 10px;
   cursor: pointer;
 }
 aside ul li:hover {
   color: black;
-  font-size: 1.6rem;
+  -webkit-text-decoration: underline #3b82f6 4px;
+          text-decoration: underline #3b82f6 4px;
+  text-underline-offset: 8px;
 }
 
 #todo-section {
@@ -90,9 +94,11 @@ aside ul li:hover {
   background-color: blue;
   color: white;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .modal-container {
+  display: grid;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -102,9 +108,7 @@ aside ul li:hover {
   border-radius: 10px;
   z-index: 100;
   box-shadow: 2px, 3px #3b82f6;
-  display: grid;
   grid-template-rows: 10% 90%;
-  display: none;
 }
 .modal-container .modal-header {
   background-color: #3b82f6;
@@ -120,6 +124,7 @@ aside ul li:hover {
 .modal-container .modal-header .close-btn {
   all: unset;
   font-size: 1.6rem;
+  cursor: pointer;
 }
 .modal-container .modal-main {
   display: grid;
@@ -157,12 +162,24 @@ aside ul li:hover {
   border: 1px solid blue;
   border-radius: 5px;
 }
+.modal-container .modal-main .modal-content .select-container {
+  display: block;
+  height: 40px;
+}
+.modal-container .modal-main .modal-content .select-container select {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: none;
+  border: 1px solid blue;
+}
 .modal-container .modal-main .modal-content button {
   all: unset;
   padding: 10px 15px;
   background-color: blue;
   color: white;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .overlay {
@@ -175,5 +192,8 @@ aside ul li:hover {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   z-index: 50;
+}
+
+.hidden {
   display: none;
 }/*# sourceMappingURL=style.css.map */

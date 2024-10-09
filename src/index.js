@@ -3,8 +3,9 @@ import { CreateTodo } from "./createTodo";
 import { todoArray } from "./Todos";
 import { Ui } from "./Ui";
 import { alertMessage } from "./alert_message";
+import { DisplayDetails } from "./Details";
 
-function selectorFn(selector) {
+export function selectorFn(selector) {
   return document.querySelector(selector);
 }
 // Selectors
@@ -18,6 +19,8 @@ const todoDescriptionInput = document.querySelector('#todo-description');
 const todoList = document.querySelector('.todos');
 const selectedDate = selectorFn('#date');
 const priority = selectorFn('select[name="priority"]');
+const details = selectorFn('.details-modal');
+const createTodoBtn = selectorFn('.create-todo-btn');
 
 
 
@@ -25,6 +28,7 @@ const priority = selectorFn('select[name="priority"]');
 openModalBtn.addEventListener('click', ()=> {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
+  createTodoBtn.classList.add('active');
 });
 
 // close todo
@@ -61,6 +65,15 @@ todoList.addEventListener('click', (e) => {
     const todoItem = e.target.closest('.todo-item');
     const indexToRemove = todoItem.dataset.index;
     Ui.deleteTodo(indexToRemove, todoArray);
+  } else if(e.target.classList.contains('details')) {
+    const todoItem = e.target.closest('.todo-item');
+    const index = todoItem.dataset.index;
+    DisplayDetails.updateUi(index, todoArray);
+    overlay.classList.remove('hidden');
+    overlay.addEventListener('click', ()=> {
+      overlay.classList.add('hidden');
+      details.classList.add('hidden');
+    })
   }
 })
 

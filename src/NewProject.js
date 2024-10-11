@@ -1,4 +1,6 @@
 import { alertMessage } from "./alert_message";
+import { closeModal } from ".";
+import { Ui } from "./Ui";
 
 
 export class Project {
@@ -17,7 +19,15 @@ export class Project {
     `;
   }
 
-  static updateProjectList() {
-   
+  static updateProjectList(projectArray) {
+   const projectInput = document.querySelector('#project-input');
+   const createNewProjectBtn = document.querySelector('.create-new-project');
+
+   createNewProjectBtn.addEventListener('click', (e) => {
+    const newProject = new Project(projectInput.value);
+    projectArray.push(newProject);
+    Ui.updateProject(projectArray);
+    closeModal();
+   })
   }
 }

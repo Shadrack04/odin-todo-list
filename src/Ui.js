@@ -22,9 +22,21 @@ export class Ui {
     });
   }
 
+  static updateProject(projectArray) {
+    const projectList = document.querySelector('.project-list');
+    projectList.innerHTML = '';
+    projectArray.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item.project;
+      projectList.appendChild(li);
+    })
+    
+  }
+
   static deleteTodo(indexToRemove, todoArray) {
     todoArray.splice(indexToRemove, 1);
     console.log(todoArray);
     Ui.updateUi(todoArray);
   }
+
 }

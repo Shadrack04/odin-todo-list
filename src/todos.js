@@ -13,3 +13,9 @@ export let todoArray = [
     description: 'description 3'
   }
 ];
+
+export let projectArray = [
+  {project: 'Home'},
+  {project: 'House'},
+  {project: 'Gym'}
+]

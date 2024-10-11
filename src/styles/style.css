@@ -215,6 +215,10 @@ aside ul li:hover {
   text-underline-offset: 8px;
 }
 
+.active-btn {
+  all: unset;
+}
+
 .hidden {
   display: none;
 }/*# sourceMappingURL=style.css.map */

@@ -216,6 +216,9 @@ aside {
   text-decoration: underline $primary-color 4px;
   text-underline-offset: 8px;
 }
+.active-btn {
+  all: unset;
+}
 
 .hidden {
   display: none;

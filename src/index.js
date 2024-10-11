@@ -1,6 +1,6 @@
 import "./styles/style.css";
 import { CreateTodo } from "./createTodo";
-import { todoArray } from "./Todos";
+import { todoArray, projectArray } from "./Todos";
 import { Ui } from "./Ui";
 import { alertMessage } from "./alert_message";
 import { DisplayDetails } from "./Details";
@@ -14,14 +14,13 @@ const openModalBtn = document.querySelector('.create-btn');
 const modal = document.querySelector('.modal-container');
 const overlay = document.querySelector('.overlay');
 const closeModalBtn = document.querySelector('.close-btn');
-
 const todoList = document.querySelector('.todos');
 const details = selectorFn('.details-modal');
-const createTodoBtn = selectorFn('.create-todo-btn');
-const createProject = selectorFn('.create-project-btn');
+
 
 window.addEventListener('DOMContentLoaded', ()=>{
   Ui.updateUi(todoArray);
+  Ui.updateProject(projectArray)
 });
 
 // open modal
@@ -52,6 +51,17 @@ todoList.addEventListener('click', (e) => {
   }
 })
 
+const modalAside = document.querySelector('.modal-aside');
+modalAside.addEventListener('click', (e) => {
+  if(e.target.classList.contains('create-todo-btn')) {
+    CreateTodo.displayTodoInput();
+  }else if(e.target.classList.contains('create-project-btn')) {
+    Project.displayInput();
+    e.target.classList.add('active-btn');
+    Project.updateProjectList(projectArray);
+  }
+})
+
 
 function openMainModal() {
   modal.classList.remove('hidden');
@@ -59,7 +69,7 @@ function openMainModal() {
 }
 
 // close modal function
-function closeModal() {
+export function closeModal() {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
   details.classList.add('hidden');

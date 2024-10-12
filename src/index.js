@@ -2,13 +2,13 @@ import "./styles/style.css";
 import { CreateTodo } from "./createTodo";
 import { todoArray, projectArray } from "./Todos";
 import { Ui } from "./Ui";
-import { alertMessage } from "./alert_message";
 import { DisplayDetails } from "./Details";
 import { Project } from "./NewProject";
 
 export function selectorFn(selector) {
   return document.querySelector(selector);
 }
+
 // Selectors
 const openModalBtn = document.querySelector('.create-btn');
 const modal = document.querySelector('.modal-container');
@@ -57,7 +57,8 @@ modalAside.addEventListener('click', (e) => {
     CreateTodo.displayTodoInput();
   }else if(e.target.classList.contains('create-project-btn')) {
     Project.displayInput();
-    e.target.classList.add('active-btn');
+    e.target.style.textDecoration = 'underline #3b82f6 4px';
+    e.target.style.textUnderlineOffset = '8px';
     Project.updateProjectList(projectArray);
   }
 })

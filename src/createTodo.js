@@ -1,5 +1,5 @@
 import { Ui } from "./Ui";
-
+import { Storage } from "./storage";
 
 // create new instance, create method to push new instance to an array,
 export class CreateTodo {
@@ -51,7 +51,7 @@ export class CreateTodo {
   
     const todo = new CreateTodo(title, description, dueDate, priority);
     todoArray.push(todo);
-
+    Storage.addToStorage("todoArray", todoArray);
     // Populate the DOM
     Ui.updateUi(todoArray);
     

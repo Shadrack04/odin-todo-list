@@ -1,7 +1,7 @@
 import { alertMessage } from "./alert_message";
 import { closeModal } from ".";
 import { Ui } from "./Ui";
-
+import { Storage } from "./storage";
 
 export class Project {
   constructor(project) {
@@ -26,6 +26,7 @@ export class Project {
    createNewProjectBtn.addEventListener('click', (e) => {
     const newProject = new Project(projectInput.value);
     projectArray.push(newProject);
+    Storage.addToStorage("projectArray", projectArray);
     Ui.updateProject(projectArray);
     closeModal();
    })

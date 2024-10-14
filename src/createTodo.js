@@ -1,16 +1,16 @@
-import { Ui } from "./Ui";
+import { Ui } from "./ui";
 import { Storage } from "./storage";
+import { selectedProject, setSelectedProject } from ".";
 
 // create new instance, create method to push new instance to an array,
 export class CreateTodo {
-  constructor(title, description, dueDate, priority) {
+  constructor(title, description, dueDate, priority, project) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
+    this.project = project;
   }
-
-
 
   static displayTodoInput() {
     const modalContent = document.querySelector(".modal-content");
@@ -38,22 +38,23 @@ export class CreateTodo {
   }
 
   static getIndex(e) {
-    const todoItem = e.target.closest('.todo-item');
+    const todoItem = e.target.closest(".todo-item");
     const index = todoItem.dataset.index;
     return index;
   }
 
   static addTodo(todoArray) {
-    const title = document.querySelector('#todo-title').value;
-    const description = document.querySelector('#todo-description').value;
-    const dueDate = document.querySelector('#date').value;
+    const title = document.querySelector("#todo-title").value;
+    const description = document.querySelector("#todo-description").value;
+    const dueDate = document.querySelector("#date").value;
     const priority = document.querySelector('select[name="priority"]').value;
-  
-    const todo = new CreateTodo(title, description, dueDate, priority);
+
+    const todo = new CreateTodo(title, description, dueDate, priority, selectedProject);
     todoArray.push(todo);
+    console.log(todo);
     Storage.addToStorage("todoArray", todoArray);
     // Populate the DOM
     Ui.updateUi(todoArray);
-    
   }
+
 }

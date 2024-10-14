@@ -51,10 +51,10 @@ export class CreateTodo {
 
     const todo = new CreateTodo(title, description, dueDate, priority, selectedProject);
     todoArray.push(todo);
-    console.log(todo);
+    
     Storage.addToStorage("todoArray", todoArray);
-    // Populate the DOM
-    Ui.updateUi(todoArray);
+    Ui.setTodoItemToDisplay(todoArray, selectedProject);
+    
   }
 
 }

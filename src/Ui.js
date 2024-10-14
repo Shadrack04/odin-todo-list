@@ -32,10 +32,11 @@ export class Ui {
       projectList.appendChild(li);
 
       // add event listener to the li
-      li.addEventListener('click', (e) => {
+      li.addEventListener("click", (e) => {
         setSelectedProject(item.project);
-        console.log(selectedProject);
-      })
+        Ui.setTodoItemToDisplay(todoArray, selectedProject);
+        
+      });
     });
   }
 
@@ -43,5 +44,14 @@ export class Ui {
     todoArray.splice(indexToRemove, 1);
     Storage.addToStorage("todoArray", todoArray);
     Ui.updateUi(todoArray);
+  }
+
+  static setTodoItemToDisplay(todoArray, project) {
+    const arrayToDisplay = todoArray.filter((item) => item.project === project);
+    if(project === 'Home') {
+      Ui.updateUi(todoArray);
+      return;
+    }
+    Ui.updateUi(arrayToDisplay);
   }
 }

@@ -26,11 +26,16 @@ window.addEventListener("DOMContentLoaded", () => {
   Ui.updateProject(projectArray);
 });
 
+//highlightSelectedList(listOfProjects);
 
 // open modal
 openModalBtn.addEventListener("click", () => {
   openMainModal();
   CreateTodo.displayTodoInput();
+
+  const modalButtons = document.querySelectorAll(".modal-aside button");
+  console.log(modalButtons);
+  Ui.highlightSelectedList(modalButtons);
 
   const addTodoBtn = document.querySelector(".add-todo-btn");
   addTodoBtn.addEventListener("click", () => {
@@ -60,8 +65,6 @@ modalAside.addEventListener("click", (e) => {
     CreateTodo.displayTodoInput();
   } else if (e.target.classList.contains("create-project-btn")) {
     Project.displayInput();
-    e.target.style.textDecoration = "underline #3b82f6 4px";
-    e.target.style.textUnderlineOffset = "8px";
     Project.updateProjectList(projectArray);
   }
 });

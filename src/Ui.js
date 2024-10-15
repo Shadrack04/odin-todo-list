@@ -35,9 +35,10 @@ export class Ui {
       li.addEventListener("click", (e) => {
         setSelectedProject(item.project);
         Ui.setTodoItemToDisplay(todoArray, selectedProject);
-        
       });
     });
+    const listOfProjects = document.querySelectorAll(".project-list li");
+    Ui.highlightSelectedList(listOfProjects);
   }
 
   static deleteTodo(indexToRemove, todoArray) {
@@ -48,10 +49,22 @@ export class Ui {
 
   static setTodoItemToDisplay(todoArray, project) {
     const arrayToDisplay = todoArray.filter((item) => item.project === project);
-    if(project === 'Home') {
+    if (project === "Home") {
       Ui.updateUi(todoArray);
       return;
     }
     Ui.updateUi(arrayToDisplay);
+  }
+
+  static highlightSelectedList(listItems) {
+    listItems.forEach((listItem) => {
+      listItem.addEventListener("click", () => {
+        // remove styled class
+        listItems.forEach((item) => item.classList.remove("active"));
+        
+        // add styled class to the clicked
+        listItem.classList.add("active");
+      });
+    });
   }
 }

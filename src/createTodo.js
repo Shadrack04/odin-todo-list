@@ -49,12 +49,16 @@ export class CreateTodo {
     const dueDate = document.querySelector("#date").value;
     const priority = document.querySelector('select[name="priority"]').value;
 
-    const todo = new CreateTodo(title, description, dueDate, priority, selectedProject);
+    const todo = new CreateTodo(
+      title,
+      description,
+      dueDate,
+      priority,
+      selectedProject
+    );
     todoArray.push(todo);
-    
+
     Storage.addToStorage("todoArray", todoArray);
     Ui.setTodoItemToDisplay(todoArray, selectedProject);
-    
   }
-
 }

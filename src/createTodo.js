@@ -1,6 +1,7 @@
 import { Ui } from "./ui";
 import { Storage } from "./storage";
 import { selectedProject, setSelectedProject } from ".";
+import { alertMessage } from "./alert_message";
 
 // create new instance, create method to push new instance to an array,
 export class CreateTodo {
@@ -49,6 +50,11 @@ export class CreateTodo {
     const dueDate = document.querySelector("#date").value;
     const priority = document.querySelector('select[name="priority"]').value;
 
+    if(CreateTodo.isInputInvalid(title, description, dueDate)) {
+      alertMessage('Inputs can not be empty');
+      return;
+    }
+
     const todo = new CreateTodo(
       title,
       description,
@@ -60,5 +66,13 @@ export class CreateTodo {
 
     Storage.addToStorage("todoArray", todoArray);
     Ui.setTodoItemToDisplay(todoArray, selectedProject);
+  }
+  
+  static isInputInvalid(title, des, date) {
+    if(title === '' || des === '' || date === '') {
+      return true;
+    }else {
+      return false;
+    }
   }
 }
